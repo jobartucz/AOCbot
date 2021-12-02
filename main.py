@@ -152,14 +152,19 @@ for entry in starlist:
 
 
 if host == "saturn":
-    print("\n<h2>Schools:</h2>\n")
+    print("\n<h2>Schools:</h2>\n<ol>\n")
 else:
     print("\nSchools:\n")
 
+        
+schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: item[1], reverse=True)}
+
 for k in schoolstars:
+    if host == "saturn":
+        print("<li>")
     print(f"{k} : {schoolstars[k]:.2f} total stars")
     if host == "saturn":
-        print("<br>")
+        print("</li>")
 
 if host == "saturn":
-    print("</html></body>")
+    print("</ol></html></body>")
