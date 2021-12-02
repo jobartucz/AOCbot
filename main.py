@@ -13,6 +13,16 @@ import requests
 import json
 import csv
 import os
+import time
+
+# print(time.time() - os.path.getmtime("data_file.json"))
+# print(time.time(), os.path.getmtime("data_file.json"))
+usefile = False # get fresh data
+# if it's been less than 15 minutes, just use what we had before.
+if time.time() - os.path.getmtime("data_file.json") < 900:
+    usefile = True
+else:
+    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
 
 users = {}
 schools = {}
@@ -32,8 +42,7 @@ teamstars = {}
 
 print("\nIndividuals:\n")
 
-# print(os.path.getmtime("data_file.json"))
-if (False):
+if (usefile == True):
     with open("data_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
@@ -69,9 +78,7 @@ for entry in starlist:
 
 print("\nTeams:\n")
 
-#print(os.path.getmtime("team_file.json"))
-
-if (False):
+if (usefile == True):
     with open("team_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
