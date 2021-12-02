@@ -17,7 +17,7 @@ import time
 import socket
 host = socket.gethostname() # for outputting html
 if host == "saturn":
-    print('<!DOCTYPE html><html><head><title>RCC Winter Programming Competition 2021</title><meta http-equiv="refresh" content="5" ></head><body>')
+    print('<!DOCTYPE html><html><head><title>RCC Winter Programming Competition 2021</title><meta http-equiv="refresh" content="60" ></head><body>')
     print('<h1>RAYTF & RCC Winter Programming Competition 2021 Leader-board</h1>')
     print(f"Updated at: {time.asctime()}")
 
