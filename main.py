@@ -19,7 +19,8 @@ host = socket.gethostname() # for outputting html
 if host == "saturn":
     print('<!DOCTYPE html><html><head><title>RCC Winter Programming Competition 2021</title>')
     print('<link rel="stylesheet" href="stylesheets/styles.css">')
-    print('<meta http-equiv="refresh" content="60" ></head><body class="container">')
+    print('<meta http-equiv="refresh" content="60" ><meta charset="UTF-8">')
+    print('</head><body class="container">')
     print('<h1 class="rainbow">RAYTF & RCC Winter Programming Competition 2021 Leader-board</h1>')
     print(f"Updated at: {time.asctime()}\n")
 
