@@ -86,6 +86,8 @@ for entry in starlist:
             schoolstars[schools[entry['name']]] = entry['stars']
     else:
         print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
+        if host == "saturn":
+            print("<br>")
 
 if host == "saturn":
     print("\n<h2>Teams:</h2>\n")
