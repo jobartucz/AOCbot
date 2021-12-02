@@ -35,7 +35,7 @@ if host == "saturn":
 if time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
     usefile = True
 else:
-    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
+    print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
 
 users = {}
 schools = {}
