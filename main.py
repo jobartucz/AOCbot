@@ -21,7 +21,7 @@ if host == "saturn":
     print('<link rel="stylesheet" href="stylesheets/styles.css">')
     print('<meta http-equiv="refresh" content="60" ></head><body class="container">')
     print('<h1 class="rainbow">RAYTF & RCC Winter Programming Competition 2021 Leader-board</h1>')
-    print(f"Updated at: {time.asctime()}")
+    print(f"Updated at: {time.asctime()}\n")
 
 
 # print(time.time() - os.path.getmtime("data_file.json"))
@@ -32,9 +32,9 @@ filepath = "./"
 if host == "saturn":
     filepath = "/var/www/html/python/AOCbot/"
 if time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
-    usefile = True
-#else:
-#    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
+    usefile = False
+else:
+    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
 
 users = {}
 schools = {}
@@ -145,6 +145,11 @@ for entry in starlist:
             if teams[entry['name']] == "Ctrl Alt Defeat":
                 schoolstars["Mayo"] += entry['stars']
                 print(f"Ctrl Alt Defeat (MM): {entry['stars']} stars")
+                if host == "saturn":
+                    print("<br>")
+            elif teams[entry['name']] == "CODINGBEASTS":
+                schoolstars["Mayo"] += entry['stars']
+                print(f"CODINGBEASTS (MM): {entry['stars']} stars")
                 if host == "saturn":
                     print("<br>")
             elif teams[entry['name']] == "Null Programmers Exception":
