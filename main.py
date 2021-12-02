@@ -14,6 +14,11 @@ import json
 import csv
 import os
 import time
+import socket
+host = socket.gethostname() # for outputting html
+if host == "saturn":
+    print("<!DOCTYPE html><html><head></head><body>")
+
 
 # print(time.time() - os.path.getmtime("data_file.json"))
 # print(time.time(), os.path.getmtime("data_file.json"))
@@ -21,8 +26,8 @@ usefile = False # get fresh data
 # if it's been less than 15 minutes, just use what we had before.
 if time.time() - os.path.getmtime("data_file.json") < 900:
     usefile = True
-else:
-    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
+#else:
+#    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
 
 users = {}
 schools = {}
@@ -40,7 +45,10 @@ schoolstars = {}
 teamstars = {}
 
 
-print("\nIndividuals:\n")
+if host == "saturn":
+    print("\n<h2>Individuals:</h2>\n")
+else:
+    print("\nIndividuals:\n")
 
 if (usefile == True):
     with open("data_file.json", "r") as read_file:
@@ -69,6 +77,9 @@ for entry in starlist:
         continue # don't double-count team members!
     if entry['name'] in users:
         print(f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
+        if host == "saturn":
+            print("<br>")
+
         if schools[entry['name']] in schoolstars:
             schoolstars[schools[entry['name']]] += entry['stars']
         else:
@@ -76,7 +87,10 @@ for entry in starlist:
     else:
         print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
 
-print("\nTeams:\n")
+if host == "saturn":
+    print("\n<h2>Teams:</h2>\n")
+else:
+    print("\nTeams:\n")
 
 if (usefile == True):
     with open("team_file.json", "r") as read_file:
@@ -112,22 +126,30 @@ for entry in starlist:
             if teams[entry['name']] == "Ctrl Alt Defeat":
                 schoolstars["Mayo"] += entry['stars']
                 print(f"Ctrl Alt Defeat (MM): {entry['stars']} stars")
-            elif teams[entry['name']] == "Snake":
-                schoolstars["Century"] += entry['stars']
-                print(f"Snake (CC): {entry['stars']} stars")
+                if host == "saturn":
+                    print("<br>")
             elif teams[entry['name']] == "Null Programmers Exception":
                 schoolstars["Mayo"] += (entry['stars'] * 1) / 3.0
                 schoolstars["Century"] += (entry['stars'] * 2) / 3.0
                 print(f"Null Programmers Exception (CCM): {entry['stars']} stars")
+                if host == "saturn":
+                    print("<br>")
 
 
     else:
-        print(f"{entry['name']} : {entry['stars']} stars")
+        print(f"ERROR!!! {entry['name']} : {entry['stars']} stars")
 
 
 
-
-print("\nSchools:\n")
+if host == "saturn":
+    print("\n<h2>Schools:</h2>\n")
+else:
+    print("\nSchools:\n")
 
 for k in schoolstars:
     print(f"{k} : {schoolstars[k]:.2f} total stars")
+    if host == "saturn":
+        print("<br>")
+
+if host == "saturn":
+    print("</html></body>")
