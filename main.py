@@ -24,7 +24,10 @@ if host == "saturn":
 # print(time.time(), os.path.getmtime("data_file.json"))
 usefile = False # get fresh data
 # if it's been less than 15 minutes, just use what we had before.
-if time.time() - os.path.getmtime("data_file.json") < 900:
+filepath = "./"
+if host == "saturn":
+    filepath = "/var/www/html/python/AOCbot/"
+if time.time() - os.path.getmtime(filepath + "data_file.json") < 900:
     usefile = True
 #else:
 #    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
@@ -32,7 +35,8 @@ if time.time() - os.path.getmtime("data_file.json") < 900:
 users = {}
 schools = {}
 teams = {}
-with open('users.csv', newline='') as csvfile:
+userfile = filepath + 'users.csv'
+with open(userfile, newline='') as csvfile:
     spamreader = csv.reader(csvfile)
     for row in spamreader:
         # print(' *** '.join(row))
@@ -51,7 +55,7 @@ else:
     print("\nIndividuals:\n")
 
 if (usefile == True):
-    with open("data_file.json", "r") as read_file:
+    with open(filepath + "data_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
     url = 'https://adventofcode.com/2021/leaderboard/private/view/641987.json'
@@ -60,7 +64,7 @@ else:
     # print(r.text)
     data = json.loads(r.text)
 
-    with open("data_file.json", "w") as write_file:
+    with open(filepath + "data_file.json", "w") as write_file:
         json.dump(r.text, write_file)
 
 starlist = []
@@ -95,7 +99,7 @@ else:
     print("\nTeams:\n")
 
 if (usefile == True):
-    with open("team_file.json", "r") as read_file:
+    with open(filepath + "team_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
     url = 'https://adventofcode.com/2021/leaderboard/private/view/1566841.json'
@@ -104,7 +108,7 @@ else:
     # print(r.text)
     data = json.loads(r.text)
 
-    with open("team_file.json", "w") as write_file:
+    with open(filepath + "team_file.json", "w") as write_file:
         json.dump(r.text, write_file)
 
 starlist = []
