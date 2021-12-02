@@ -97,9 +97,11 @@ for entry in starlist:
     else:
         if host == "saturn":
             print("<li>")
-        print(f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: https://forms.gle/kjF6wU71oXkJUaMD9")
-        if host == "saturn":
+            print(f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
             print("</li>")
+        else:
+            print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
+
 
 if host == "saturn":
     print("</ol>\n<h2>Teams:</h2>\n")
