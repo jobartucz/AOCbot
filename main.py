@@ -54,6 +54,7 @@ teamstars = {}
 
 
 if host == "saturn":
+    print("\n<div id='individuals'>\n")
     print("\n<h2>Individuals:</h2><ol>\n")
 else:
     print("\nIndividuals:\n")
@@ -104,6 +105,8 @@ for entry in starlist:
 
 
 if host == "saturn":
+    print("\n</div>\n")
+    print("\n<div id='teams'>\n")
     print("</ol>\n<h2>Teams:</h2>\n")
 else:
     print("\nTeams:\n")
@@ -158,6 +161,8 @@ for entry in starlist:
 
 
 if host == "saturn":
+    print("\n</div>\n")
+    print("\n<div id='schools'>\n")
     print("\n<h2>Schools:</h2>\n<ol>\n")
 else:
     print("\nSchools:\n")
@@ -173,4 +178,6 @@ for k in schoolstars:
         print("</li>")
 
 if host == "saturn":
-    print("</ol></html></body>")
+    print("</ol>")
+    print("\n</div>\n")
+    print("\n</html></body>")
