@@ -27,7 +27,7 @@ usefile = False # get fresh data
 filepath = "./"
 if host == "saturn":
     filepath = "/var/www/html/python/AOCbot/"
-if time.time() - os.path.getmtime(filepath + "data_file.json") < 900:
+if time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
     usefile = True
 #else:
 #    print(f"Getting fresh data {time.time() - os.path.getmtime('data_file.json')}")
