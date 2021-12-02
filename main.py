@@ -17,7 +17,8 @@ import time
 import socket
 host = socket.gethostname() # for outputting html
 if host == "saturn":
-    print("<!DOCTYPE html><html><head></head><body>")
+    print('<!DOCTYPE html><html><head><title>RCC Winter Programming Competition 2021</title><meta http-equiv="refresh" content="5" ></head><body>')
+    print(f"Updated at: {time.asctime()}")
 
 
 # print(time.time() - os.path.getmtime("data_file.json"))
