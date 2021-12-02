@@ -50,7 +50,7 @@ teamstars = {}
 
 
 if host == "saturn":
-    print("\n<h2>Individuals:</h2>\n")
+    print("\n<h2>Individuals:</h2><ol>\n")
 else:
     print("\nIndividuals:\n")
 
@@ -80,21 +80,25 @@ for entry in starlist:
     if entry['name'] in teams:
         continue # don't double-count team members!
     if entry['name'] in users:
+        if host == "saturn":
+            print("<li>")
         print(f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
         if host == "saturn":
-            print("<br>")
+            print("</li>")
 
         if schools[entry['name']] in schoolstars:
             schoolstars[schools[entry['name']]] += entry['stars']
         else:
             schoolstars[schools[entry['name']]] = entry['stars']
     else:
+        if host == "saturn":
+            print("<li>")
         print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
         if host == "saturn":
-            print("<br>")
+            print("</li>")
 
 if host == "saturn":
-    print("\n<h2>Teams:</h2>\n")
+    print("</ol>\n<h2>Teams:</h2>\n")
 else:
     print("\nTeams:\n")
 
