@@ -125,6 +125,7 @@ else:
     with open(filepath + "team_file.json", "w") as write_file:
         json.dump(r.text, write_file)
 
+# create the list of users and their stars
 starlist = []
 for m in data["members"]:
     if data['members'][m]['stars']:
@@ -136,6 +137,8 @@ for m in data["members"]:
 starlist = sorted(starlist, key = lambda starlist: starlist['local_score'],reverse=True)
 for entry in starlist:
     if entry['name'] in users:
+        if entry['name'] not in teams: # individual joined the team leaderboard
+            continue
         if teams[entry['name']] in teamstars:
             # print(f"skipping {users[entry['name']]}, already got {teams[entry['name']]} stars from other member")
             continue # skip teams that already have a higher entry
