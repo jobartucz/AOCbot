@@ -159,7 +159,7 @@ for entry in starlist:
             elif teams[entry['name']] == "Null Programmers Exception":
                 schoolstars["Mayo"] += (entry['stars'] * 1) / 2.0
                 schoolstars["Century"] += (entry['stars'] * 1) / 2.0
-                print(f"Null Programmers Exception (CCM): {entry['stars']} stars")
+                print(f"Null Programmers Exception (CM): {entry['stars']} stars")
                 if host == "saturn":
                     print("<br>")
 
