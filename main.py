@@ -25,7 +25,7 @@ if host == "saturn":
     print('</head><body class="container">')
     print('<h1 class="rainbow">RAYTF & RCC Winter Programming Competition 2021 Leader-board</h1>')
     print(f"Updated at: {time.asctime()}\n")
-
+    print("<p id='clock'></p>")
 
 # print(time.time() - os.path.getmtime("data_file.json"))
 # print(time.time(), os.path.getmtime("data_file.json"))
