@@ -98,6 +98,9 @@ for entry in starlist:
             schoolstars[schools[entry['name']]] += entry['stars']
         else:
             schoolstars[schools[entry['name']]] = entry['stars']
+        
+        schoolstars['CTECH'] = randint(-2000, 2000) * 0.5
+
     else:
         if host == "saturn":
             pass
@@ -183,8 +186,7 @@ schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: ite
 for k in schoolstars:
     if host == "saturn":
         print(f"<li><span class='{k}'>")
-    if k == "CTECH":
-        schoolstars[k] = randint(-2000, 2000) * 0.5
+
     print(f"{k} : {schoolstars[k]:.1f} total stars")
     if host == "saturn":
         print("</span></li>")
