@@ -163,17 +163,17 @@ for entry in starlist:
             if teams[entry['name']] == "Ctrl Alt Defeat":
                 schoolstars["Mayo"] += entry['stars']
                 numparticipants["Mayo"] += 1
-                print(f"<li class='Mayo'>Ctrl Alt Defeat (MM): {entry['stars']} stars</li>")
+                print(f"<li class='Mayo'>Ctrl Alt Defeat (Mayo/Mayo): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "CODINGBEASTS":
                 schoolstars["Mayo"] += entry['stars']
                 numparticipants["Mayo"] += 1
-                print(f"<li class='Mayo'>CODINGBEASTS (MM): {entry['stars']} stars</li>")
+                print(f"<li class='Mayo'>CODINGBEASTS (Mayo/Mayo): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "Null Programmers Exception":
                 schoolstars["Mayo"] += (entry['stars'] * 1) / 2.0
                 schoolstars["Century"] += (entry['stars'] * 1) / 2.0
                 numparticipants["Mayo"] += 0.5
                 numparticipants["Century"] += 0.5
-                print(f"<li style='color:#00CCCC'>Null Programmers Exception (CM): {entry['stars']} stars</li>")
+                print(f"<li style='color:#00CCCC'>Null Programmers Exception (Century/Mayo): {entry['stars']} stars</li>")
 
 
     else:
