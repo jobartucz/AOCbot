@@ -34,7 +34,7 @@ usefile = False # get fresh data
 filepath = "./"
 if host == "saturn":
     filepath = "/var/www/html/python/AOCbot/"
-if time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
+if os.path.exists(filepath + "data_file.json") and time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
     usefile = True
 # else:
 #     print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
@@ -84,7 +84,7 @@ if host == "saturn":
 else:
     print("\nIndividuals with at least one star:\n")
 
-if os.path.exists(filepath + "data_file.json") and usefile == True:
+if usefile == True:
     with open(filepath + "data_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
