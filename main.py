@@ -110,7 +110,7 @@ if host == "saturn":
     print("\n<div id='teams'>\n")
     print("</ol>\n<h2>Teams:</h2>\n")
 else:
-    print("\nTeams:\n")
+    print("\nTeams:\n<ol>")
 
 if (usefile == True):
     with open(filepath + "team_file.json", "r") as read_file:
@@ -148,18 +148,18 @@ for entry in starlist:
 
             if teams[entry['name']] == "Ctrl Alt Defeat":
                 schoolstars["Mayo"] += entry['stars']
-                print(f"Ctrl Alt Defeat (MM): {entry['stars']} stars")
+                print(f"<li class='Mayo'>Ctrl Alt Defeat (MM): {entry['stars']} stars</li>")
                 if host == "saturn":
                     print("<br>")
             elif teams[entry['name']] == "CODINGBEASTS":
                 schoolstars["Mayo"] += entry['stars']
-                print(f"CODINGBEASTS (MM): {entry['stars']} stars")
+                print(f"<li class='Mayo'>CODINGBEASTS (MM): {entry['stars']} stars</li>")
                 if host == "saturn":
                     print("<br>")
             elif teams[entry['name']] == "Null Programmers Exception":
                 schoolstars["Mayo"] += (entry['stars'] * 1) / 2.0
                 schoolstars["Century"] += (entry['stars'] * 1) / 2.0
-                print(f"Null Programmers Exception (CM): {entry['stars']} stars")
+                print(f"<li style='color:#00CCCC'>Null Programmers Exception (CM): {entry['stars']} stars</li>")
                 if host == "saturn":
                     print("<br>")
 
@@ -170,7 +170,7 @@ for entry in starlist:
 
 
 if host == "saturn":
-    print("\n</div>\n")
+    print("\n</ol>\n</div>\n")
     print("\n<div id='schools'>\n")
     print("\n<h2>Schools:</h2>\n<ol>\n")
 else:
