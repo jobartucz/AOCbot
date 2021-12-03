@@ -5,22 +5,22 @@ body {
   background-color:#607D8B;
 }
 
-.Century a {
+.Century  #text {
   color: blue;
 }
-.Kellogg a {
+.Kellogg #text {
   color: navy;
 }
-.Lincoln a {
+.Lincoln  #text {
   color: cornflowerblue;
 }
-.JM a {
+.JM  #text {
   color: red;
 }
-.Mayo a {
+.Mayo  #text {
   color: green;
 }
-.CTECH a {
+.CTECH  #text {
   color: yellow;
 }
 
