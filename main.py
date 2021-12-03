@@ -84,7 +84,7 @@ if host == "saturn":
 else:
     print("\nIndividuals with at least one star:\n")
 
-if (usefile == True):
+if os.path.exists(filepath + "data_file.json") and usefile == True:
     with open(filepath + "data_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
@@ -147,7 +147,7 @@ if host == "saturn":
 else:
     print("\nTeams:\n")
 
-if (usefile == True):
+if os.path.exists(filepath + "team_file.json") and usefile == True:
     with open(filepath + "team_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
