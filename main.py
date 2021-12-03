@@ -202,4 +202,5 @@ for k in schoolstars:
 if host == "saturn":
     print("</ol>")
     print("\n</div>\n")
+    print("<script src='scripts/main.js'></script>")
     print("\n</html></body>")
