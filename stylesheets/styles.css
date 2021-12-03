@@ -5,6 +5,22 @@ body {
   background-color:#607D8B;
 }
 
+.Century {
+  color: blue;
+}
+.Kellogg {
+  color: navy;
+}
+.Lincoln {
+  color: lightblue;
+}
+.JM {
+  color: red;
+}
+.Mayo {
+  color: green;
+}
+
 .container{
   background-color:#E0F2F1;
   padding:10px;
