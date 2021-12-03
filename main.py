@@ -61,7 +61,7 @@ if host == "saturn":
     print("\n<div id='individuals'>\n")
     print("\n<h2>Individuals:</h2><ol>\n")
 else:
-    print("\nIndividuals:\n")
+    print("\nIndividuals with at least one star:\n")
 
 if (usefile == True):
     with open(filepath + "data_file.json", "r") as read_file:
