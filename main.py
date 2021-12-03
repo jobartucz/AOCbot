@@ -147,7 +147,7 @@ if host == "saturn":
 else:
     print("\nTeams:\n")
 
-if os.path.exists(filepath + "team_file.json") and usefile == True:
+if usefile == True:
     with open(filepath + "team_file.json", "r") as read_file:
         data = json.loads(json.load(read_file))
 else:
