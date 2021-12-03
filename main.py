@@ -87,7 +87,7 @@ for entry in starlist:
         continue # don't double-count team members!
     if entry['name'] in users:
         if host == "saturn":
-            print("<li>")
+            print("<li class='{schools[entry['name']]}'>")
         print(f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
         if host == "saturn":
             print("</li>")
@@ -181,7 +181,7 @@ schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: ite
 
 for k in schoolstars:
     if host == "saturn":
-        print("<li>")
+        print("<li class='{k}'>")
     print(f"{k} : {schoolstars[k]:.2f} total stars")
     if host == "saturn":
         print("</li>")
