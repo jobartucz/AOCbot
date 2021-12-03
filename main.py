@@ -109,7 +109,7 @@ if host == "saturn":
     print("\n</ol>\n")
     print("If your name is on the AOC board, but not here, you probably didn't fill out the Google Form, or typed in your AOC username incorrectly.<br>\n")
     print("You can go here to fix it: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
-    print("</li>")"
+    print("</li>")
     print("</div>\n")
     print("\n<div id='teams'>\n")
     print("<h2>Teams:</h2>\n<ol>\n")
