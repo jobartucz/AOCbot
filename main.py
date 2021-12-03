@@ -103,6 +103,7 @@ for entry in starlist:
             numparticipants[schools[entry['name']]] = 1
         
         schoolstars['CTECH'] = randint(-2000, 2000) * 0.5
+        numparticipants['CTECH'] = 1
 
     else:
         if host == "saturn":
