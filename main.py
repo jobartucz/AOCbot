@@ -53,6 +53,7 @@ with open(userfile, newline='') as csvfile:
             teams[row[5]] = row[8]
 
 schoolstars = {}
+numparticipants = {}
 teamstars = {}
 
 
@@ -96,8 +97,10 @@ for entry in starlist:
 
         if schools[entry['name']] in schoolstars:
             schoolstars[schools[entry['name']]] += entry['stars']
+            numparticipants[schools[entry['name']]] += 1
         else:
             schoolstars[schools[entry['name']]] = entry['stars']
+            numparticipants[schools[entry['name']]] = 1
         
         schoolstars['CTECH'] = randint(-2000, 2000) * 0.5
 
@@ -158,13 +161,17 @@ for entry in starlist:
 
             if teams[entry['name']] == "Ctrl Alt Defeat":
                 schoolstars["Mayo"] += entry['stars']
+                numparticipants["Mayo"] += 1
                 print(f"<li class='Mayo'>Ctrl Alt Defeat (MM): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "CODINGBEASTS":
                 schoolstars["Mayo"] += entry['stars']
+                numparticipants["Mayo"] += 1
                 print(f"<li class='Mayo'>CODINGBEASTS (MM): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "Null Programmers Exception":
                 schoolstars["Mayo"] += (entry['stars'] * 1) / 2.0
                 schoolstars["Century"] += (entry['stars'] * 1) / 2.0
+                numparticipants["Mayo"] += 0.5
+                numparticipants["Century"] += 0.5
                 print(f"<li style='color:#00CCCC'>Null Programmers Exception (CM): {entry['stars']} stars</li>")
 
 
@@ -187,7 +194,7 @@ for k in schoolstars:
     if host == "saturn":
         print(f"<li><span class='{k}'>")
 
-    print(f"{k} : {schoolstars[k]:.1f} total stars")
+    print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} participants, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     if host == "saturn":
         print("</span></li>")
 
