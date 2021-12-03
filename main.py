@@ -176,7 +176,7 @@ schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: ite
 for k in schoolstars:
     if host == "saturn":
         print(f"<li><span class='{k}'>")
-    print(f"{k} : {schoolstars[k]:.2f} total stars")
+    print(f"{k} : {schoolstars[k]:.1f} total stars")
     if host == "saturn":
         print("</span></li>")
 
