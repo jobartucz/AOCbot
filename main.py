@@ -36,8 +36,8 @@ if host == "saturn":
     filepath = "/var/www/html/python/AOCbot/"
 if time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
     usefile = True
-else:
-    print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
+# else:
+#     print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
 
 users = {}
 schools = {}
@@ -51,6 +51,27 @@ with open(userfile, newline='') as csvfile:
         schools[row[5]] = row[4]
         if row[7] == "Team":
             teams[row[5]] = row[8]
+    csvfile.close()
+    
+# add to a cleaned user dictionary for kenny
+jsondata = {}
+with open(userfile, newline='') as csvfile:
+    spamreader = csv.DictReader(csvfile)
+    for row in spamreader:
+        del row['Email Address']
+        del row['What is your t-shirt size?']
+
+        key = row['What is your Advent of Code Username? (Make sure you are logged in to see it!)']
+        jsondata[key] = row
+
+    csvfile.close()
+
+# Open a json writer, and use the json.dumps()
+# function to dump data
+with open(filepath + 'users.json', 'w', encoding='utf-8') as jsonf:
+    jsonf.write(json.dumps(jsondata, indent=4))
+    jsonf.close()
+
 
 schoolstars = {}
 numparticipants = {}
