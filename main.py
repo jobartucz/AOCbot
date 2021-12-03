@@ -15,7 +15,7 @@ import csv
 import os
 import time
 import socket
-from random import randrange
+from random import randint
 
 host = socket.gethostname() # for outputting html
 if host == "saturn":
@@ -184,7 +184,7 @@ for k in schoolstars:
     if host == "saturn":
         print(f"<li><span class='{k}'>")
     if k == "CTECH":
-        schoolstars[k] = randrange(-1000, 1000, 0.5)
+        schoolstars[k] = randint(-2000, 2000) * 0.5
     print(f"{k} : {schoolstars[k]:.1f} total stars")
     if host == "saturn":
         print("</span></li>")
