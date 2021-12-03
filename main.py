@@ -97,7 +97,7 @@ for entry in starlist:
         else:
             schoolstars[schools[entry['name']]] = entry['stars']
     else:
-        if host == "saturn":
+        if False and host == "saturn":
             print("<li>")
             print(f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
             print("</li>")
@@ -106,7 +106,11 @@ for entry in starlist:
 
 
 if host == "saturn":
-    print("\n</ol>\n</div>\n")
+    print("\n</ol>\n")
+    print("If your name is on the AOC board, but not here, you probably didn't fill out the Google Form, or typed in your AOC username incorrectly.<br>\n")
+    print("You can go here to fix it: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
+    print("</li>")"
+    print("</div>\n")
     print("\n<div id='teams'>\n")
     print("<h2>Teams:</h2>\n<ol>\n")
 else:
