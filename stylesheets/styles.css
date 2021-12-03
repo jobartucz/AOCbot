@@ -12,13 +12,16 @@ body {
   color: navy;
 }
 .Lincoln {
-  color: lightblue;
+  color: cornflowerblue;
 }
 .JM {
   color: red;
 }
 .Mayo {
   color: green;
+}
+.CTECH {
+  color: yellow;
 }
 
 .container{
