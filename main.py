@@ -128,10 +128,10 @@ for entry in starlist:
 
     else:
         if host == "saturn":
-            pass
-            # print("<li>")
-            # print(f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
-            # print("</li>")
+            # pass
+            print("<li>")
+            print(f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
+            print("</li>")
         else:
             print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
 
