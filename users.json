@@ -519,11 +519,11 @@
         "What is your team name?": "",
         "Who is on your team?": ""
     },
-    "R0n1n-Codes": {
+    "R0n1n-codes": {
         "Timestamp": "12/3/2021 10:48:49",
         "What is your first and last name?": "Sam Phan",
         "Which school do you attend?": "JM",
-        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "R0n1n-Codes",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "R0n1n-codes",
         "Which programming language do you plan on using?": "Python",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",
@@ -925,6 +925,16 @@
         "Which school do you attend?": "Mayo",
         "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "James Bajzer",
         "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Ethan Gaddis": {
+        "Timestamp": "12/3/2021 17:22:16",
+        "What is your first and last name?": "Ethan Gaddis",
+        "Which school do you attend?": "Mayo",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Ethan Gaddis",
+        "Which programming language do you plan on using?": "Java",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",
         "Who is on your team?": ""
