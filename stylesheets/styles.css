@@ -37,6 +37,11 @@ h1 {
   color:#212121;
 }
 
+h2 {
+  color:rgba(100, 50, 255, .8);
+  font-family: 'Pacifico', cursive;
+}
+
 .rainbow {
   
    /* Font options */
