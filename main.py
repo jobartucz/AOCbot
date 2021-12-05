@@ -222,7 +222,7 @@ for k in schoolstars:
         print(f"<li><span class='{k}'>")
 
     if k == "CTECH":
-        print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+        print(f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     else:
         print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} participants, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     if host == "saturn":
