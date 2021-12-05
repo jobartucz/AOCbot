@@ -212,7 +212,7 @@ else:
 schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: item[1], reverse=True)}
 
 animals = []
-with open("animals.txt", "r") as f:
+with open(filepath + "animals.txt", "r") as f:
     for line in f:
         animals.append(line.strip())
     f.close()
