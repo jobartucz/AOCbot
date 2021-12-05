@@ -15,7 +15,7 @@ import csv
 import os
 import time
 import socket
-from random import randint
+from random import choice
 
 host = socket.gethostname() # for outputting html
 if host == "saturn":
@@ -123,7 +123,6 @@ for entry in starlist:
             schoolstars[schools[entry['name']]] = entry['stars']
             numparticipants[schools[entry['name']]] = 1
         
-        schoolstars['CTECH'] = randint(-2000, 2000) * 0.5
         numparticipants['CTECH'] = 1
 
     else:
@@ -212,11 +211,20 @@ else:
         
 schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: item[1], reverse=True)}
 
+animals = []
+with open("animals.txt", "r") as f:
+    for line in f:
+        animals.append(line.strip())
+    f.close()
+
 for k in schoolstars:
     if host == "saturn":
         print(f"<li><span class='{k}'>")
 
-    print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} participants, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+    if k == "CTECH":
+        print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+    else:
+        print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} participants, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     if host == "saturn":
         print("</span></li>")
 

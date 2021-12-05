@@ -259,11 +259,11 @@
         "What is your team name?": "",
         "Who is on your team?": ""
     },
-    "anonymous user #1564188": {
-        "Timestamp": "11/30/2021 17:00:45",
+    "Scott Anderson": {
+        "Timestamp": "12/3/2021 21:03:25",
         "What is your first and last name?": "Scott Anderson",
         "Which school do you attend?": "JM",
-        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "anonymous user #1564188",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Scott Anderson",
         "Which programming language do you plan on using?": "Python",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",
@@ -570,11 +570,11 @@
         "Who is on your team?": ""
     },
     "8986401": {
-        "Timestamp": "11/10/2021 17:26:06",
-        "What is your first and last name?": "Chahel Muralidhar",
-        "Which school do you attend?": "Lincoln ",
+        "Timestamp": "12/4/2021 10:18:12",
+        "What is your first and last name?": "Chahel",
+        "Which school do you attend?": "Lincoln",
         "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "8986401",
-        "Which programming language do you plan on using?": "Python",
+        "Which programming language do you plan on using?": "coding",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",
         "Who is on your team?": ""
@@ -935,6 +935,46 @@
         "Which school do you attend?": "Mayo",
         "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Ethan Gaddis",
         "Which programming language do you plan on using?": "Java",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Jay": {
+        "Timestamp": "12/3/2021 19:50:36",
+        "What is your first and last name?": "Jay Sargent",
+        "Which school do you attend?": "Century",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Jay",
+        "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Drake Mitchell": {
+        "Timestamp": "12/3/2021 22:05:53",
+        "What is your first and last name?": "Drake Mitchell",
+        "Which school do you attend?": "JM",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Drake Mitchell",
+        "Which programming language do you plan on using?": "Java",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Cooper Gamble": {
+        "Timestamp": "12/4/2021 21:10:54",
+        "What is your first and last name?": "Cooper Gamble",
+        "Which school do you attend?": "Mayo",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Cooper Gamble",
+        "Which programming language do you plan on using?": "Javascript",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Nhan Le-Rademacher": {
+        "Timestamp": "12/4/2021 20:30:01",
+        "What is your first and last name?": "Nhan Le-Rademacher",
+        "Which school do you attend?": "Mayo",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Nhan Le-Rademacher",
+        "Which programming language do you plan on using?": "Scratch",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",
         "Who is on your team?": ""
