@@ -235,7 +235,7 @@ if host == "saturn":
     print("</ol>")
     print("\n</div>\n")
     print("\n<div id='totalstars'>\n")
-    print(f"\n<h2>Total Stars: {int(totalstars)}</h2>\n")
+    print(f"\n<h2 class='rainbow'>Total Stars Earned by All Participants: {int(totalstars)}</h2>\n")
     print("\n</div>\n")
     print("<script src='scripts/main.js'></script>")
     print("\n</html></body>")
