@@ -39,6 +39,7 @@ if os.path.exists(filepath + "data_file.json") and time.time() - os.path.getmtim
 # else:
 #     print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
 
+totalstars = 0
 users = {}
 schools = {}
 teams = {}
@@ -221,6 +222,8 @@ for k in schoolstars:
     if host == "saturn":
         print(f"<li><span class='{k}'>")
 
+    totalstars += schoolstars[k]
+
     if k == "CTECH":
         print(f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     else:
@@ -230,6 +233,9 @@ for k in schoolstars:
 
 if host == "saturn":
     print("</ol>")
+    print("\n</div>\n")
+    print("\n<div id='totalstars'>\n")
+    print(f"\n<h2>Total Stars: {int(totalstars)}</h2>\n")
     print("\n</div>\n")
     print("<script src='scripts/main.js'></script>")
     print("\n</html></body>")
