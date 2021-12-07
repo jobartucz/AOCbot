@@ -17,7 +17,7 @@ import time
 import socket
 from random import choice
 
-mascots = {'Century':'Panthers','JM':'Rockets','Mayo':'Spartans','Kellogg':'Comets','Lincoln':'Logs'}
+mascots = {'Century':choice(['Panthers','Panters']),'JM':choice(['Rockets','Rockettes','Sprockets']),'Mayo':choice(['Spartans','Sparetires']),'Kellogg':choice(['Comets','Cornflakes']),'Lincoln':choice(['Logs','Lynx'])}
 
 host = socket.gethostname() # for outputting html
 if host == "saturn":
@@ -80,12 +80,15 @@ schoolstars = {}
 numparticipants = {}
 teamstars = {}
 
+i_text = ""
+t_text = ""
+s_text = ""
 
 if host == "saturn":
-    print("\n<div id='individuals'>\n")
-    print("\n<h2>Individuals:</h2><ol>\n")
+    i_text += ("\n<div id='individuals'>\n")
+    i_text += ("\n<h2>Individuals:</h2><ol>\n")
 else:
-    print("\nIndividuals with at least one star:\n")
+    i_text += ("\nIndividuals with at least one star:\n")
 
 if usefile == True:
     with open(filepath + "data_file.json", "r") as read_file:
@@ -94,7 +97,7 @@ else:
     url = 'https://adventofcode.com/2021/leaderboard/private/view/641987.json'
     cookies = dict(session='53616c7465645f5f72b4a0ed3b4c9147b26da9702562b6c77828a4bdefb2d9c8bed1773bf0f4e7899e48c8be77e15431')
     r = requests.get(url, cookies=cookies)
-    # print(r.text)
+    # i_text += (r.text)
     data = json.loads(r.text)
 
     with open(filepath + "data_file.json", "w") as write_file:
@@ -103,8 +106,8 @@ else:
 starlist = []
 for m in data["members"]:
     if data['members'][m]['stars']:
-        #print(m)
-        #print(data["members"][m])
+        #i_text += (m)
+        #i_text += (data["members"][m])
         starlist.append(data["members"][m])
 
 # resort the list by number of stars then local-score (reversed)
@@ -114,10 +117,10 @@ for entry in starlist:
         continue # don't double-count team members!
     if entry['name'] in users:
         if host == "saturn":
-            print(f"<li><span class='{schools[entry['name']]}'>")
-        print(f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
+            i_text += (f"<li><span class='{schools[entry['name']]}'>")
+        i_text += (f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
         if host == "saturn":
-            print("</span></li>")
+            i_text += ("</span></li>")
 
         if schools[entry['name']] in schoolstars:
             schoolstars[schools[entry['name']]] += entry['stars']
@@ -131,23 +134,23 @@ for entry in starlist:
     else:
         if host == "saturn":
             # pass
-            print("<li>")
-            print(f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
-            print("</li>")
+            i_text += ("<li>")
+            i_text += (f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
+            i_text += ("</li>")
         else:
-            print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
+            i_text += (f"{entry['name']} not registered - not counted: {entry['stars']} stars")
 
 
 if host == "saturn":
-    print("\n</ol>\n")
-    print("If your name is on the AOC board, but not here, you probably didn't fill out the Google Form, or typed in your AOC username incorrectly.<br>\n")
-    print("You can go here to fix it: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
-    print("</li>")
-    print("</div>\n")
-    print("\n<div id='teams'>\n")
-    print("<h2>Teams:</h2>\n<ol>\n")
+    i_text += ("\n</ol>\n")
+    i_text += ("If your name is on the AOC board, but not here, you probably didn't fill out the Google Form, or typed in your AOC username incorrectly.<br>\n")
+    i_text += ("You can go here to fix it: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
+    i_text += ("</li>")
+    i_text += ("</div>\n")
+    t_text += ("\n<div id='teams'>\n")
+    t_text += ("<h2>Teams:</h2>\n<ol>\n")
 else:
-    print("\nTeams:\n")
+    t_text += ("\nTeams:\n")
 
 if usefile == True:
     with open(filepath + "team_file.json", "r") as read_file:
@@ -156,7 +159,7 @@ else:
     url = 'https://adventofcode.com/2021/leaderboard/private/view/1566841.json'
     cookies = dict(session='53616c7465645f5fc012ab039fb15a6fa623b7dca5a054d92e41ad9e667462260622bee83ecb5892e12d22b4b7aa579b')
     r = requests.get(url, cookies=cookies)
-    # print(r.text)
+    # t_text += (r.text)
     data = json.loads(r.text)
 
     with open(filepath + "team_file.json", "w") as write_file:
@@ -166,8 +169,8 @@ else:
 starlist = []
 for m in data["members"]:
     if data['members'][m]['stars']:
-        #print(m)
-        #print(data["members"][m])
+        #t_text += (m)
+        #t_text += (data["members"][m])
         starlist.append(data["members"][m])
 
 # resort the list by number of stars (reversed)
@@ -177,26 +180,26 @@ for entry in starlist:
         if entry['name'] not in teams: # individual joined the team leaderboard
             continue
         if teams[entry['name']] in teamstars:
-            # print(f"skipping {users[entry['name']]}, already got {teams[entry['name']]} stars from other member")
+            # t_text += (f"skipping {users[entry['name']]}, already got {teams[entry['name']]} stars from other member")
             continue # skip teams that already have a higher entry
         else:
-            # print(f"{teams[entry['name']]} : {entry['stars']} stars")
+            # t_text += (f"{teams[entry['name']]} : {entry['stars']} stars")
             teamstars[teams[entry['name']]] = entry['stars']
 
             if teams[entry['name']] == "Ctrl Alt Defeat":
                 schoolstars["Mayo"] += entry['stars']
                 numparticipants["Mayo"] += 1
-                print(f"<li class='Mayo'>Ctrl Alt Defeat (Mayo/Mayo): {entry['stars']} stars</li>")
+                t_text += (f"<li class='Mayo'>Ctrl Alt Defeat (Mayo/Mayo): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "CODINGBEASTS":
                 schoolstars["Mayo"] += entry['stars']
                 numparticipants["Mayo"] += 1
-                print(f"<li class='Mayo'>CODINGBEASTS (Mayo/Mayo): {entry['stars']} stars</li>")
+                t_text += (f"<li class='Mayo'>CODINGBEASTS (Mayo/Mayo): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "Null Programmers Exception":
                 schoolstars["Mayo"] += (entry['stars'] * 1) / 2.0
                 schoolstars["Century"] += (entry['stars'] * 1) / 2.0
                 numparticipants["Mayo"] += 0.5
                 numparticipants["Century"] += 0.5
-                print(f"<li style='color:#00CCCC'>Null Programmers Exception (Century/Mayo): {entry['stars']} stars</li>")
+                t_text += (f"<li style='color:#00CCCC'>Null Programmers Exception (Century/Mayo): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "the kool kidz":
                 schoolstars["Lincoln"] += entry['stars']
                 numparticipants["Lincoln"] += 1
@@ -205,16 +208,16 @@ for entry in starlist:
                 numparticipants["Lincoln"] += 1
 
     else:
-        print(f"ERROR!!! {entry['name']} : {entry['stars']} stars")
+        t_text += (f"ERROR!!! {entry['name']} : {entry['stars']} stars")
 
 
 
 if host == "saturn":
-    print("\n</ol>\n</div>\n")
-    print("\n<div id='schools'>\n")
-    print("\n<h2>Schools:</h2>\n<ol>\n")
+    t_text += ("\n</ol>\n</div>\n")
+    s_text += ("\n<div id='schools'>\n")
+    s_text += ("\n<h2>Schools:</h2>\n<ol>\n")
 else:
-    print("\nSchools:\n")
+    s_text += ("\nSchools:\n")
 
         
 schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: item[1], reverse=True)}
@@ -227,20 +230,26 @@ with open(filepath + "animals.txt", "r") as f:
 
 for k in schoolstars:
     if host == "saturn":
-        print(f"<li><span class='{k}'>")
+        s_text += (f"<li><span class='{k}'>")
 
     totalstars += schoolstars[k]
 
     if k == "CTECH":
-        print(f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+        s_text += (f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     else:
-        print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {mascots[k]}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+        s_text += (f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {mascots[k]}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     if host == "saturn":
-        print("</span></li>")
+        s_text += ("</span></li>")
 
 if host == "saturn":
-    print("</ol>")
-    print("\n</div>\n")
+    s_text += ("</ol>")
+    s_text += ("\n</div>\n")
+
+print(s_text)
+print(t_text)
+print(i_text)
+
+if host == "saturn":
     print("\n<div id='totalstars'>\n")
     print(f"\n<h2 class='rainbow'>Total Stars Earned by All Participants: {int(totalstars)}</h2>\n")
     print("\n</div>\n")
