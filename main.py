@@ -195,7 +195,12 @@ for entry in starlist:
                 numparticipants["Mayo"] += 0.5
                 numparticipants["Century"] += 0.5
                 print(f"<li style='color:#00CCCC'>Null Programmers Exception (Century/Mayo): {entry['stars']} stars</li>")
-
+            elif teams[entry['name']] == "the kool kidz":
+                schoolstars["Lincoln"] += entry['stars']
+                numparticipants["Lincoln"] += 1
+            elif teams[entry['name']] == "Strawberry":
+                schoolstars["Lincoln"] += entry['stars']
+                numparticipants["Lincoln"] += 1
 
     else:
         print(f"ERROR!!! {entry['name']} : {entry['stars']} stars")
