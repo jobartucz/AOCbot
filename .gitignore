@@ -1,5 +1,6 @@
 data_file.json
 team_file.json
+users.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
