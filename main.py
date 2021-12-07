@@ -17,7 +17,7 @@ import time
 import socket
 from random import choice
 
-mascots = {'Century':'Panthers','JM':'Rockets','Mayo':'Spartans','Kellogg':'Comets','Lincoln':'Lynx'}
+mascots = {'Century':'Panthers','JM':'Rockets','Mayo':'Spartans','Kellogg':'Comets','Lincoln':'Logs'}
 
 host = socket.gethostname() # for outputting html
 if host == "saturn":
