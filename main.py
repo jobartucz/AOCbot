@@ -31,13 +31,13 @@ if host == "saturn":
 
 # print(time.time() - os.path.getmtime("data_file.json"))
 # print(time.time(), os.path.getmtime("data_file.json"))
-usefile = False # get fresh data
+usefile = False # get fresh data by default
 # if it's been less than 15 minutes, just use what we had before.
 filepath = "./"
 if host == "saturn":
     filepath = "/var/www/html/python/AOCbot/"
 if os.path.exists(filepath + "data_file.json") and time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
-    usefile = True
+    usefile = True # if it's been less than 10 minutes, just use the stored file
 # else:
 #     print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
 
