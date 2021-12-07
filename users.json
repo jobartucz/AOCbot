@@ -879,11 +879,11 @@
         "What is your team name?": "",
         "Who is on your team?": ""
     },
-    "joshua couch": {
-        "Timestamp": "12/3/2021 14:06:31",
+    "Joshua Couch": {
+        "Timestamp": "12/6/2021 14:27:49",
         "What is your first and last name?": "Joshua Couch",
         "Which school do you attend?": "Mayo",
-        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "joshua couch",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Joshua Couch",
         "Which programming language do you plan on using?": "Scratch",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",
@@ -974,6 +974,86 @@
         "What is your first and last name?": "Nhan Le-Rademacher",
         "Which school do you attend?": "Mayo",
         "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Nhan Le-Rademacher",
+        "Which programming language do you plan on using?": "Scratch",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Pramod Anandarao": {
+        "Timestamp": "12/5/2021 21:27:55",
+        "What is your first and last name?": "Pramod Anandarao",
+        "Which school do you attend?": "JM",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Pramod Anandarao",
+        "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Evangeline Ellenbaum": {
+        "Timestamp": "12/6/2021 13:31:31",
+        "What is your first and last name?": "Evie Ellenbaum",
+        "Which school do you attend?": "Lincoln",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Evangeline Ellenbaum",
+        "Which programming language do you plan on using?": "Javascript",
+        "Are you participating as part of a team or as an individual?": "Team",
+        "What is your team name?": "Strawberry",
+        "Who is on your team?": "Evie Ellenbaum, Jamie Ahern, Benjamin Werner"
+    },
+    "Gavin Buhrow": {
+        "Timestamp": "12/6/2021 13:32:11",
+        "What is your first and last name?": "gavin buhrow",
+        "Which school do you attend?": "Lincoln",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Gavin Buhrow",
+        "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Team",
+        "What is your team name?": "the kool kidz",
+        "Who is on your team?": "Timothy Schroder, Aiden Linden"
+    },
+    "Timothy Schroeder": {
+        "Timestamp": "12/6/2021 13:32:16",
+        "What is your first and last name?": "Timothy Schroeder",
+        "Which school do you attend?": "Lincoln",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Timothy Schroeder",
+        "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Team",
+        "What is your team name?": "the kool kidz",
+        "Who is on your team?": "Aiden Linden Gavin Buhrow"
+    },
+    "Aiden Linden": {
+        "Timestamp": "12/6/2021 13:32:40",
+        "What is your first and last name?": "aiden linden",
+        "Which school do you attend?": "Lincoln",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Aiden Linden",
+        "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Team",
+        "What is your team name?": "the kool kidz",
+        "Who is on your team?": "Gavin Buhrow Timothy schroeder"
+    },
+    "Marc Zoghby": {
+        "Timestamp": "12/6/2021 16:57:33",
+        "What is your first and last name?": "Marc Zoghby",
+        "Which school do you attend?": "Mayo",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Marc Zoghby",
+        "Which programming language do you plan on using?": "Python",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Chloe Vesterby": {
+        "Timestamp": "12/6/2021 17:07:14",
+        "What is your first and last name?": "Chloe Vesterby",
+        "Which school do you attend?": "Kellogg",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Chloe Vesterby",
+        "Which programming language do you plan on using?": "Scratch",
+        "Are you participating as part of a team or as an individual?": "Individual",
+        "What is your team name?": "",
+        "Who is on your team?": ""
+    },
+    "Joseph Vesterby": {
+        "Timestamp": "12/6/2021 17:13:48",
+        "What is your first and last name?": "Joseph Vesterby",
+        "Which school do you attend?": "Century",
+        "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Joseph Vesterby",
         "Which programming language do you plan on using?": "Scratch",
         "Are you participating as part of a team or as an individual?": "Individual",
         "What is your team name?": "",

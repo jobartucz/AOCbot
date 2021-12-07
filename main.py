@@ -17,6 +17,8 @@ import time
 import socket
 from random import choice
 
+mascots = {'Century':'Panthers','JM':'Rockets','Mayo':'Spartans','Kellogg':'Comets','Lincoln':'Lynx'}
+
 host = socket.gethostname() # for outputting html
 if host == "saturn":
     print('<!DOCTYPE html><html><head><title>RCC Winter Programming Competition 2021</title>')
@@ -232,7 +234,7 @@ for k in schoolstars:
     if k == "CTECH":
         print(f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     else:
-        print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} participants, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+        print(f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {mascots[k]}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
     if host == "saturn":
         print("</span></li>")
 
