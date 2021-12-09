@@ -234,10 +234,11 @@ for k in schoolstars:
 
     totalstars += schoolstars[k]
 
+    er = choice(["efficiency rating", "m.p.g."])
     if k == "CTECH":
-        s_text += (f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+        s_text += (f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} {er}")
     else:
-        s_text += (f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {mascots[k]}, {schoolstars[k] / numparticipants[k]:.1f} efficiency rating")
+        s_text += (f"{k} : {schoolstars[k]:.1f} total stars, {numparticipants[k]:.1f} {mascots[k]}, {schoolstars[k] / numparticipants[k]:.1f} {er}")
     if host == "saturn":
         s_text += ("</span></li>")
 
