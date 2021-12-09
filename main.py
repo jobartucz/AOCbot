@@ -228,7 +228,7 @@ with open(filepath + "animals.txt", "r") as f:
         animals.append(line.strip())
     f.close()
 
-er = choice(["efficiency rating", "m.p.g."])
+er = choice(["efficiency rating", "mpg"])
 for k in schoolstars:
     if host == "saturn":
         s_text += (f"<li><span class='{k}'>")
