@@ -228,13 +228,13 @@ with open(filepath + "animals.txt", "r") as f:
         animals.append(line.strip())
     f.close()
 
+er = choice(["efficiency rating", "m.p.g."])
 for k in schoolstars:
     if host == "saturn":
         s_text += (f"<li><span class='{k}'>")
 
     totalstars += schoolstars[k]
 
-    er = choice(["efficiency rating", "m.p.g."])
     if k == "CTECH":
         s_text += (f"{k} : {schoolstars[k]:.1f} total stars, 1 {choice(animals)}, {schoolstars[k] / numparticipants[k]:.1f} {er}")
     else:
