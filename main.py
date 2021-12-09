@@ -93,7 +93,7 @@ else:
 
 if usefile == True:
     with open(filepath + "data_file.json", "r") as read_file:
-        data = json.loads(json.load(read_file))
+        data = json.load(read_file)
 else:
     url = 'https://adventofcode.com/2021/leaderboard/private/view/641987.json'
     cookies = dict(session='53616c7465645f5f72b4a0ed3b4c9147b26da9702562b6c77828a4bdefb2d9c8bed1773bf0f4e7899e48c8be77e15431')
@@ -102,7 +102,7 @@ else:
     data = json.loads(r.text)
 
     with open(filepath + "data_file.json", "w") as write_file:
-        json.dump(r.text, write_file)
+        json.dump(data, write_file)
 
 starlist = []
 for m in data["members"]:
@@ -155,7 +155,7 @@ else:
 
 if usefile == True:
     with open(filepath + "team_file.json", "r") as read_file:
-        data = json.loads(json.load(read_file))
+        data = json.load(read_file)
 else:
     url = 'https://adventofcode.com/2021/leaderboard/private/view/1566841.json'
     cookies = dict(session='53616c7465645f5fc012ab039fb15a6fa623b7dca5a054d92e41ad9e667462260622bee83ecb5892e12d22b4b7aa579b')
@@ -164,7 +164,7 @@ else:
     data = json.loads(r.text)
 
     with open(filepath + "team_file.json", "w") as write_file:
-        json.dump(r.text, write_file)
+        json.dump(data, write_file)
 
 # create the list of users and their stars
 starlist = []
