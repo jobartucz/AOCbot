@@ -122,6 +122,8 @@ for entry in starlist:
         i_text += (f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
         if host == "saturn":
             i_text += ("</span></li>")
+        else:
+            i_text += ("\n")
 
         if schools[entry['name']] in schoolstars:
             schoolstars[schools[entry['name']]] += entry['stars']
@@ -139,7 +141,7 @@ for entry in starlist:
             i_text += (f"{entry['name']} not registered - not counted: {entry['stars']} stars - go here to fix: <a href='https://forms.gle/kjF6wU71oXkJUaMD9'>https://forms.gle/kjF6wU71oXkJUaMD9</a>")
             i_text += ("</li>")
         else:
-            i_text += (f"{entry['name']} not registered - not counted: {entry['stars']} stars")
+            i_text += (f"{entry['name']} not registered - not counted: {entry['stars']} stars\n")
 
 
 if host == "saturn":
