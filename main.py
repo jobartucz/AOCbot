@@ -18,6 +18,7 @@ import socket
 from random import choice
 
 mascots = {'Century':choice(['Panthers','Panters']),'JM':choice(['Rockets','Rockettes','Sprockets']),'Mayo':choice(['Spartans','Sparetires']),'Kellogg':choice(['Comets','Cornflakes']),'Lincoln':choice(['Logs','Lynx'])}
+mascots = {'Century':'Panthers','JM':'Rockets','Mayo':'Spartans','Kellogg':'Comets','Lincoln':'Lynx'}
 
 host = socket.gethostname() # for outputting html
 if host == "saturn":
@@ -228,7 +229,7 @@ with open(filepath + "animals.txt", "r") as f:
         animals.append(line.strip())
     f.close()
 
-er = choice(["efficiency rating", "mpg"])
+er = choice(["efficiency rating"])
 for k in schoolstars:
     if host == "saturn":
         s_text += (f"<li><span class='{k}'>")
