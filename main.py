@@ -70,10 +70,9 @@ with open(userfile, newline='') as csvfile:
 
     csvfile.close()
 
-# Open a json writer, and use the json.dumps()
-# function to dump data
+# Open a json writer, and use the json.dump()
 with open(filepath + 'users.json', 'w', encoding='utf-8') as jsonf:
-    jsonf.write(json.dumps(jsondata, indent=4))
+    json.dump(jsondata, jsonf, indent=2)
     jsonf.close()
 
 
@@ -102,7 +101,7 @@ else:
     data = json.loads(r.text)
 
     with open(filepath + "data_file.json", "w") as write_file:
-        json.dump(data, write_file)
+        json.dump(data, write_file, indent=2)
 
 starlist = []
 for m in data["members"]:
@@ -122,6 +121,7 @@ for entry in starlist:
         i_text += (f"{users[entry['name']]} ({schools[entry['name']]}): {entry['stars']} stars")
         if host == "saturn":
             i_text += ("</span></li>")
+        i_text += ("\n")
 
         if schools[entry['name']] in schoolstars:
             schoolstars[schools[entry['name']]] += entry['stars']
@@ -140,6 +140,7 @@ for entry in starlist:
             i_text += ("</li>")
         else:
             i_text += (f"{entry['name']} not registered - not counted: {entry['stars']} stars")
+        i_text += ("\n")
 
 
 if host == "saturn":
@@ -164,7 +165,7 @@ else:
     data = json.loads(r.text)
 
     with open(filepath + "team_file.json", "w") as write_file:
-        json.dump(data, write_file)
+        json.dump(data, write_file, indent=2)
 
 # create the list of users and their stars
 starlist = []
@@ -210,6 +211,8 @@ for entry in starlist:
 
     else:
         t_text += (f"ERROR!!! {entry['name']} : {entry['stars']} stars")
+    
+    t_text += ("\n")
 
 
 
