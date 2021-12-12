@@ -1,4 +1,5 @@
-*.json
+data_file.json
+team_file.json
 users.csv
 
 # Byte-compiled / optimized / DLL files
