@@ -46,34 +46,39 @@ totalstars = 0
 users = {}
 schools = {}
 teams = {}
-userfile = filepath + 'users.csv'
-with open(userfile, newline='') as csvfile:
-    spamreader = csv.reader(csvfile)
-    for row in spamreader:
-        # print(' *** '.join(row))
-        users[row[5]] = row[2]
-        schools[row[5]] = row[4]
-        if row[7] == "Team":
-            teams[row[5]] = row[8]
-    csvfile.close()
-    
-# add to a cleaned user dictionary for kenny
-jsondata = {}
-with open(userfile, newline='') as csvfile:
-    spamreader = csv.DictReader(csvfile)
-    for row in spamreader:
-        del row['Email Address']
-        del row['What is your t-shirt size?']
 
-        key = row['What is your Advent of Code Username? (Make sure you are logged in to see it!)']
-        jsondata[key] = row
+if 1 == 1:
+    with open(filepath + "users.json", "r") as read_file:
+        users = json.load(read_file)
+else:
+    userfile = '/Users/jbartucz/Downloads/' + 'users.csv'
+    with open(userfile, newline='') as csvfile:
+        spamreader = csv.reader(csvfile)
+        for row in spamreader:
+            # print(' *** '.join(row))
+            users[row[5]] = row[2]
+            schools[row[5]] = row[4]
+            if row[7] == "Team":
+                teams[row[5]] = row[8]
+        csvfile.close()
+        
+    # add to a cleaned user dictionary for kenny
+    jsondata = {}
+    with open(userfile, newline='') as csvfile:
+        spamreader = csv.DictReader(csvfile)
+        for row in spamreader:
+            del row['Email Address']
+            del row['What is your t-shirt size?']
 
-    csvfile.close()
+            key = row['What is your Advent of Code Username? (Make sure you are logged in to see it!)']
+            jsondata[key] = row
 
-# Open a json writer, and use the json.dump()
-with open(filepath + 'users.json', 'w', encoding='utf-8') as jsonf:
-    json.dump(jsondata, jsonf, indent=2)
-    jsonf.close()
+        csvfile.close()
+
+    # Open a json writer, and use the json.dump()
+    with open(filepath + 'users.json', 'w', encoding='utf-8') as jsonf:
+        json.dump(jsondata, jsonf, indent=2)
+        jsonf.close()
 
 
 schoolstars = {}
