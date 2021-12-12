@@ -47,7 +47,7 @@ users = {}
 schools = {}
 teams = {}
 
-if 1 == 1:
+if host == "saturn":
     with open(filepath + "users.json", "r") as read_file:
         users_json = json.load(read_file)
         for k in users_json.keys():
