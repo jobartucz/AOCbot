@@ -49,7 +49,12 @@ teams = {}
 
 if 1 == 1:
     with open(filepath + "users.json", "r") as read_file:
-        users = json.load(read_file)
+        users_json = json.load(read_file)
+        for k in users_json.keys():
+            users[k] = users_json[k]['What is your first and last name?']
+            schools[k] = users_json[k]['Which school do you attend?']
+            if users_json[k]['Are you participating as part of a team or as an individual?'] == 'Team':
+                teams[k] = users_json[k]['What is your team name?']
 else:
     userfile = '/Users/jbartucz/Downloads/' + 'users.csv'
     with open(userfile, newline='') as csvfile:
