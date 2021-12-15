@@ -6,11 +6,11 @@ with open("data_file.json", "r") as read_file:
 
 times = {}
 
-times['2'] = int((datetime(2021, 12, 2) - datetime(1970, 1, 1)).total_seconds()) + 21600 - 3600
-times['9'] = int((datetime(2021, 12, 9) - datetime(1970, 1, 1)).total_seconds()) + 21600 - 3600
-times['16'] = int((datetime(2021, 12, 16) - datetime(1970, 1, 1)).total_seconds())
-times['23'] = int((datetime(2021, 12, 23) - datetime(1970, 1, 1)).total_seconds())
-times['30'] = int((datetime(2021, 12, 30) - datetime(1970, 1, 1)).total_seconds())
+times['2'] = int((datetime(2021, 12, 2) - datetime(1970, 1, 1)).total_seconds()) + 21600 * 2
+times['9'] = int((datetime(2021, 12, 9) - datetime(1970, 1, 1)).total_seconds()) + 21600 * 2
+times['16'] = int((datetime(2021, 12, 16) - datetime(1970, 1, 1)).total_seconds()) + 21600 * 2
+times['23'] = int((datetime(2021, 12, 23) - datetime(1970, 1, 1)).total_seconds()) + 21600 * 2
+times['30'] = int((datetime(2021, 12, 30) - datetime(1970, 1, 1)).total_seconds()) + 21600 * 2
 
 print(times)
 
