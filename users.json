@@ -1055,11 +1055,11 @@
     "Who is on your team?": "",
     "If you are participating in the RCC Discord server, you will be automatically added to specific channels when you complete stars. You can join here: https://discord.gg/hsN92V4  - Please enter your Discord username so we can verify you.": ""
   },
-  "CrimsonShadows12 (I can email proof if you want)": {
-    "Timestamp": "12/13/2021 22:10:58",
+  "CrimsonShadows12": {
+    "Timestamp": "12/16/2021 15:16:42",
     "What is your first and last name?": "Jeffrey Wang",
     "Which school do you attend?": "Mayo",
-    "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "CrimsonShadows12 (I can email proof if you want)",
+    "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "CrimsonShadows12",
     "Which programming language do you plan on using?": "Python",
     "Are you participating as part of a team or as an individual?": "Individual",
     "What is your team name?": "",
@@ -1329,5 +1329,16 @@
     "What is your team name?": "",
     "Who is on your team?": "",
     "If you are participating in the RCC Discord server, you will be automatically added to specific channels when you complete stars. You can join here: https://discord.gg/hsN92V4  - Please enter your Discord username so we can verify you.": ""
+  },
+  "Jacob Turner": {
+    "Timestamp": "12/17/2021 11:20:50",
+    "What is your first and last name?": "jacob turner",
+    "Which school do you attend?": "Mayo",
+    "What is your Advent of Code Username? (Make sure you are logged in to see it!)": "Jacob Turner",
+    "Which programming language do you plan on using?": "Python",
+    "Are you participating as part of a team or as an individual?": "Individual",
+    "What is your team name?": "",
+    "Who is on your team?": "",
+    "If you are participating in the RCC Discord server, you will be automatically added to specific channels when you complete stars. You can join here: https://discord.gg/hsN92V4  - Please enter your Discord username so we can verify you.": "jacobt246#5839"
   }
 }
