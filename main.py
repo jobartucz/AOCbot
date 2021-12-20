@@ -123,8 +123,8 @@ for m in data["members"]:
 # resort the list by number of stars then local-score (reversed)
 starlist = sorted(starlist, key = lambda starlist: (starlist['stars'], starlist['local_score']),reverse=True)
 for entry in starlist:
-    if host != "saturn":
-        print(users[entry['name']])
+    # if host != "saturn":
+    #     print(users[entry['name']])
     if entry['name'] in teams:
         continue # don't double-count team members!
     if entry['name'] in users:
