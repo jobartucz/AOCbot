@@ -56,7 +56,7 @@ if host == "saturn":
             if users_json[k]['Are you participating as part of a team or as an individual?'] == 'Team':
                 teams[k] = users_json[k]['What is your team name?']
 else:
-    userfile = '/Users/jbartucz/Downloads/' + 'users.csv'
+    userfile = 'users.csv'
     with open(userfile, newline='') as csvfile:
         spamreader = csv.reader(csvfile)
         for row in spamreader:
