@@ -22,7 +22,11 @@ mins['23'] = ('',99999999999, '')
 mins['30'] = ('',99999999999, '')
 
 for k in data['members'].keys():
+    if data['members'][k]['name'] == 'Michael Weiner':
+        continue
     if '1' in data['members'][k]['completion_day_level']:
+        # print(datetime.fromtimestamp(data['members'][k]['completion_day_level']['1']['1']['get_star_ts']).strftime('%Y-%m-%d %H:%M:%S'),data['members'][k]['name'])        
+        # continue
         for t in mins.keys():
             diff = data['members'][k]['completion_day_level']['1']['1']['get_star_ts'] - times[t]
             if diff > 0 and diff < mins[t][1]:
