@@ -176,6 +176,8 @@ else:
     # t_text += (r.text)
     data = json.loads(r.text)
 
+    ## I should really delete people who haven't registered here :/ JAB ***
+
     with open(filepath + "team_file.json", "w") as write_file:
         json.dump(data, write_file, indent=2)
 
