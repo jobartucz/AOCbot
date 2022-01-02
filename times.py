@@ -60,34 +60,48 @@ for m in team_data["members"]:
         if duplicate == False:
             starlist.append(team_data["members"][m])
 
-# resort the list by number of stars then local-score (reversed)
-starlist = sorted(starlist, key = lambda starlist: (starlist['stars'], starlist['local_score']),reverse=True)
-for entry in starlist:
-    # if host != "saturn":
-    #     print(users[entry['name']])
-    if entry['name'] in users:
-        print(f"\n{users[entry['name']]}: {entry['stars']} stars")
-        for i in range(1,26):
-            if str(i) in entry['completion_day_level']:
-
-                print(f"Day {i}:")
-                if str('1') in entry['completion_day_level'][str(i)]:
-                    diff = entry['completion_day_level'][str(i)]['1']['get_star_ts'] - times[i]
-                    days, remainder = divmod(diff, 3600*24)
-                    hours, remainder = divmod(remainder, 3600)
-                    minutes, seconds = divmod(remainder, 60)
-                    print("  Part 1: {:02}:{:02}:{:02}:{:02}".format(int(days), int(hours), int(minutes), int(seconds)))
-
-                if str('2') in entry['completion_day_level'][str(i)]:
-                    diff = entry['completion_day_level'][str(i)]['2']['get_star_ts'] - entry['completion_day_level'][str(i)]['1']['get_star_ts']
-                    days, remainder = divmod(diff, 3600*24)
-                    hours, remainder = divmod(remainder, 3600)
-                    minutes, seconds = divmod(remainder, 60)
-                    print("  Part 2: {:02}:{:02}:{:02}:{:02}".format(int(days), int(hours), int(minutes), int(seconds)))
+with open("times.csv", "w") as f:
+    f.write("Day,")
+    for i in range(1,26):
+        f.write(f"D {i} P 1,D {i} P 2,")
+    f.write("\n")
 
 
-    else:
+    # resort the list by number of stars then local-score (reversed)
+    starlist = sorted(starlist, key = lambda starlist: (starlist['stars'], starlist['local_score']),reverse=True)
+    for entry in starlist:
+        # if host != "saturn":
+        #     print(users[entry['name']])
+        if entry['name'] in users:
+            print(f"\n{users[entry['name']]}: {entry['stars']} stars")
 
-        print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
+            f.write(f"{users[entry['name']]},")
+            for i in range(1,26):
+                if str(i) in entry['completion_day_level']:
+
+                    print(f"Day {i}:")
+                    if str('1') in entry['completion_day_level'][str(i)]:
+                        diff = entry['completion_day_level'][str(i)]['1']['get_star_ts'] - times[i]
+                        days, remainder = divmod(diff, 3600*24)
+                        hours, remainder = divmod(remainder, 3600)
+                        minutes, seconds = divmod(remainder, 60)
+                        print("  Part 1: {:02}:{:02}:{:02}:{:02}".format(int(days), int(hours), int(minutes), int(seconds)))
+                        f.write(str(diff))
+                    f.write(',')
+
+                    if str('2') in entry['completion_day_level'][str(i)]:
+                        diff = entry['completion_day_level'][str(i)]['2']['get_star_ts'] - entry['completion_day_level'][str(i)]['1']['get_star_ts']
+                        days, remainder = divmod(diff, 3600*24)
+                        hours, remainder = divmod(remainder, 3600)
+                        minutes, seconds = divmod(remainder, 60)
+                        print("  Part 2: {:02}:{:02}:{:02}:{:02}".format(int(days), int(hours), int(minutes), int(seconds)))
+                        f.write(str(diff))
+                    f.write(',')
+            f.write('\n')
+
+
+        else:
+
+            print(f"{entry['name']} not registered - not counted: {entry['stars']} stars")
 
 
