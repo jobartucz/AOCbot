@@ -63,7 +63,9 @@ for m in team_data["members"]:
 with open("times.csv", "w") as f:
     f.write("Day,")
     for i in range(1,26):
-        f.write(f"D {i} P 1,D {i} P 2,")
+        f.write(f"D {i} P 1,")
+    for i in range(1,26):
+        f.write(f"D {i} P 2,")
     f.write("\n")
 
 
@@ -89,6 +91,8 @@ with open("times.csv", "w") as f:
                         f.write(str(diff))
                     f.write(',')
 
+            for i in range(1,26):
+                if str(i) in entry['completion_day_level']:
                     if str('2') in entry['completion_day_level'][str(i)]:
                         diff = entry['completion_day_level'][str(i)]['2']['get_star_ts'] - entry['completion_day_level'][str(i)]['1']['get_star_ts']
                         days, remainder = divmod(diff, 3600*24)
