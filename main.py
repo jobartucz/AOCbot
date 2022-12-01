@@ -1,10 +1,10 @@
-### individual:
+# individual:
 # url = 'https://adventofcode.com/2021/leaderboard/private/view/641987.json'
 # cookies = dict(session='53616c7465645f5f72b4a0ed3b4c9147b26da9702562b6c77828a4bdefb2d9c8bed1773bf0f4e7899e48c8be77e15431')
-### team:
+# team:
 # url = 'https://adventofcode.com/2021/leaderboard/private/view/1566841.json'
 # cookies = dict(session='53616c7465645f5fc012ab039fb15a6fa623b7dca5a054d92e41ad9e667462260622bee83ecb5892e12d22b4b7aa579b')
-### college:
+# college:
 # url = 'https://adventofcode.com/2021/leaderboard/private/view/1567131.json'
 # cookies = dict(session='53616c7465645f5f6af580b520db3b7acaa0d4a0f305ef5188fa1e2e4f8e0b2ff13c15bd22f17fb790eb64602b09311c')
 
@@ -17,10 +17,11 @@ import time
 import socket
 from random import choice
 
-mascots = {'Century':choice(['Panthers','Panters']),'JM':choice(['Rockets','Rockettes','Sprockets']),'Mayo':choice(['Spartans','Sparetires']),'Kellogg':choice(['Comets','Cornflakes']),'Lincoln':choice(['Logs','Lynx'])}
-mascots = {'Century':'Panthers','JM':'Rockets','Mayo':'Spartans','Kellogg':'Comets','Lincoln':'Lynx'}
+mascots = {'Century': choice(['Panthers', 'Panters']), 'JM': choice(['Rockets', 'Rockettes', 'Sprockets']), 'Mayo': choice(
+    ['Spartans', 'Sparetires']), 'Kellogg': choice(['Comets', 'Cornflakes']), 'Lincoln': choice(['Logs', 'Lynx'])}
+mascots = {'Century': 'Panthers', 'JM': 'Rockets', 'Mayo': 'Spartans', 'Kellogg': 'Comets', 'Lincoln': 'Lynx'}
 
-host = socket.gethostname() # for outputting html
+host = socket.gethostname()  # for outputting html
 if host == "saturn":
     print('<!DOCTYPE html><html><head><title>RCC Winter Programming Competition 2021</title>')
     print('<link rel="stylesheet" href="stylesheets/styles.css">')
@@ -32,13 +33,13 @@ if host == "saturn":
 
 # print(time.time() - os.path.getmtime("data_file.json"))
 # print(time.time(), os.path.getmtime("data_file.json"))
-usefile = False # get fresh data by default
+usefile = False  # get fresh data by default
 # if it's been less than 15 minutes, just use what we had before.
 filepath = "./"
 if host == "saturn":
     filepath = "/var/www/html/python/AOCbot/"
 if os.path.exists(filepath + "data_file.json") and time.time() - os.path.getmtime(filepath + "data_file.json") < 500:
-    usefile = True # if it's been less than 10 minutes, just use the stored file
+    usefile = True  # if it's been less than 10 minutes, just use the stored file
 # else:
 #     print(f"Getting fresh data {time.time() - os.path.getmtime(filepath + 'data_file.json')}")
 
@@ -66,12 +67,13 @@ else:
             if row[7] == "Team":
                 teams[row[5]] = row[8]
         csvfile.close()
-        
+
     # add to a cleaned user dictionary for kenny
     jsondata = {}
     with open(userfile, newline='') as csvfile:
         spamreader = csv.DictReader(csvfile)
         for row in spamreader:
+            # print(row)
             del row['Email Address']
             del row['What is your t-shirt size?']
 
@@ -84,7 +86,6 @@ else:
     with open(filepath + 'users.json', 'w', encoding='utf-8') as jsonf:
         json.dump(jsondata, jsonf, indent=2)
         jsonf.close()
-
 
 schoolstars = {}
 numparticipants = {}
@@ -121,12 +122,12 @@ for m in data["members"]:
         starlist.append(data["members"][m])
 
 # resort the list by number of stars then local-score (reversed)
-starlist = sorted(starlist, key = lambda starlist: (starlist['stars'], starlist['local_score']),reverse=True)
+starlist = sorted(starlist, key=lambda starlist: (starlist['stars'], starlist['local_score']), reverse=True)
 for entry in starlist:
     # if host != "saturn":
     #     print(users[entry['name']])
     if entry['name'] in teams:
-        continue # don't double-count team members!
+        continue  # don't double-count team members!
     if entry['name'] in users:
         if host == "saturn":
             i_text += (f"<li><span class='{schools[entry['name']]}'>")
@@ -141,7 +142,7 @@ for entry in starlist:
         else:
             schoolstars[schools[entry['name']]] = entry['stars']
             numparticipants[schools[entry['name']]] = 1
-        
+
         numparticipants['CTECH'] = 1
 
     else:
@@ -176,7 +177,7 @@ else:
     # t_text += (r.text)
     data = json.loads(r.text)
 
-    ## I should really delete people who haven't registered here :/ JAB ***
+    # I should really delete people who haven't registered here :/ JAB ***
 
     with open(filepath + "team_file.json", "w") as write_file:
         json.dump(data, write_file, indent=2)
@@ -191,14 +192,14 @@ for m in data["members"]:
 
 
 # resort the list by number of stars (reversed)
-starlist = sorted(starlist, key = lambda starlist: starlist['local_score'],reverse=True)
+starlist = sorted(starlist, key=lambda starlist: starlist['local_score'], reverse=True)
 for entry in starlist:
     if entry['name'] in users:
-        if entry['name'] not in teams: # individual joined the team leaderboard
+        if entry['name'] not in teams:  # individual joined the team leaderboard
             continue
         if teams[entry['name']] in teamstars:
             # t_text += (f"skipping {users[entry['name']]}, already got {teams[entry['name']]} stars from other member")
-            continue # skip teams that already have a higher entry
+            continue  # skip teams that already have a higher entry
         else:
             # t_text += (f"{teams[entry['name']]} : {entry['stars']} stars")
             teamstars[teams[entry['name']]] = entry['stars']
@@ -216,7 +217,8 @@ for entry in starlist:
                 schoolstars["Century"] += (entry['stars'] * 1) / 2.0
                 numparticipants["Mayo"] += 0.5
                 numparticipants["Century"] += 0.5
-                t_text += (f"<li style='color:#00CCCC'>Null Programmers Exception (Century/Mayo): {entry['stars']} stars</li>")
+                t_text += (
+                    f"<li style='color:#00CCCC'>Null Programmers Exception (Century/Mayo): {entry['stars']} stars</li>")
             elif teams[entry['name']] == "the kool kidz":
                 schoolstars["Lincoln"] += entry['stars']
                 numparticipants["Lincoln"] += 1
@@ -226,9 +228,8 @@ for entry in starlist:
 
     else:
         t_text += (f"ERROR!!! {entry['name']} : {entry['stars']} stars")
-    
-    t_text += ("\n")
 
+    t_text += ("\n")
 
 
 if host == "saturn":
@@ -238,7 +239,7 @@ if host == "saturn":
 else:
     s_text += ("\nSchools:\n")
 
-        
+
 schoolstars = {k: v for k, v in sorted(schoolstars.items(), key=lambda item: item[1], reverse=True)}
 
 animals = []
