@@ -1,6 +1,6 @@
 data_file.json
 team_file.json
-users.csv
+users*.csv
 *.bak
 
 # Byte-compiled / optimized / DLL files
